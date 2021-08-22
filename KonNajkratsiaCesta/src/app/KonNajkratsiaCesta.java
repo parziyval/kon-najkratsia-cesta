@@ -67,11 +67,13 @@ public class KonNajkratsiaCesta {
             Policko aktualne = queue.removeFirst();
             int aktX = aktualne.getX();
             int aktY = aktualne.getY();
+            //ak dojdeme na cielove policko, vrati sa pocet tahov, ktorymi sme sa tam dostali
             if (aktX == xKon && aktY == yKon) {
                 return aktualne.getVzdialenost();
             }
             
-            //prejdu sa vsetky dosazitelne pozicie a ak su platne a neboli navstivene, tak sa pridaju do queue
+            //prejdu sa vsetky dosazitelne pozicie a ak su platne a neboli navstivene,
+            //oznacia sa ako navstivene a pridaju sa do queue so vzdialenostou o 1 vacsou
             int x;
             int y;
             for (int i = 0; i < riadky.length; i++) {
